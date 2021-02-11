@@ -14,7 +14,7 @@ export default {
             password
         }
 
-        await Queue.add(user)
+        await Queue.add({user})
        
 
         return response.json(user)

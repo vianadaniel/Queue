@@ -9,8 +9,8 @@ export interface UserInterface {
 
 export default{
     key: 'RegistrationMail',
-    async handle(user: UserInterface): Promise<void>{
-        
+    async handle({data}: any ): Promise<void>{
+        const {user} = data
         await Mail.sendMail({
             from: 'Queue <queue@test.com.br>',
             to: `${user.name} <${user.email}>`,
